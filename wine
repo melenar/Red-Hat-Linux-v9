@@ -1,0 +1,24 @@
+# install library to compile wine software
+dnf install gcc libX11-devel freetype-devel zlib-devel libxcb-devel libxslt-devel libgcrypt-devel libxml2-devel gnutls-devel libpng-devel libjpeg-turbo-devel libtiff-devel dbus-devel fontconfig-devel
+
+# to download the wine software in zip format
+wget http://dl.winehq.org/wine/source/7.0/wine-7.0.tar.xz
+tar -xvf wine-7.0.tar.xz
+
+# to prepare the system for the installation based on the hardware
+./configure --enable-win64
+
+# to compile the wine software files
+make
+
+# to install the wine software
+make install
+
+# to configure the windows enviornment
+winecfg
+
+# to open notepad
+wine64 notepad
+
+# to open other executable files with wine
+wine ~/Downloads/putty.exe
