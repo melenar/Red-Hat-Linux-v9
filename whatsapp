@@ -1,0 +1,13 @@
+# to install the node package manager
+dnf install npm
+
+# to install the package for using whatsapp via cli
+npm install mudslide
+
+# to run the package use npx
+# read man mudslide to list all the features of the api
+npx mudslide login
+# scan the qr and login
+
+# To send msg to a particular number
+npx mudslide send {number} 'message'
