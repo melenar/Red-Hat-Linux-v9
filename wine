@@ -1,9 +1,13 @@
-# install library to compile wine software
-dnf install gcc libX11-devel freetype-devel zlib-devel libxcb-devel libxslt-devel libgcrypt-devel libxml2-devel gnutls-devel libpng-devel libjpeg-turbo-devel libtiff-devel dbus-devel fontconfig-devel
 
 # to download the wine software in zip format
 wget http://dl.winehq.org/wine/source/7.0/wine-7.0.tar.xz
 tar -xvf wine-7.0.tar.xz
+
+# install the Development tools if not already
+dnf groupinstall 'Development Tools'
+
+# install library to compile wine software
+dnf install gcc libX11-devel freetype-devel zlib-devel libxcb-devel libxslt-devel libgcrypt-devel libxml2-devel gnutls-devel libpng-devel libjpeg-turbo-devel libtiff-devel dbus-devel fontconfig-devel
 
 # to prepare the system for the installation based on the hardware
 ./configure --enable-win64
